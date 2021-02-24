@@ -6,7 +6,12 @@ const Heading = styled.h1`
 `;
 
 function Home() {
-  return <Heading>Hello world!</Heading>;
+  return (
+    <>
+      <Heading>Hello world!</Heading>
+      <div>Hello world!</div>
+    </>
+  )
 }
 
 export default Home;

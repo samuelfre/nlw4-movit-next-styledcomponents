@@ -2,8 +2,8 @@
    yarn add typescript @types/react @types/node -D -> Depêndencia de desenvolvimento. 
 -Install styled-components
    yarn add styled-components
--Install and setup styled-components Babel plugin (Tem configs pra fazer https://hoangtrinhj.com/next-js-with-styled-components)
-   yarn add babel-plugin-styled-components
+-Install and setup styled-components Babel plugin (Tem configs pra fazer https://hoangtrinhj.com/next-js-with-styled-components) e tbm no package.json um tal de resolution.
+   yarn add babel-plugin-styled-components -D
 
 Dicas
 **yarn remove -> remove pack
