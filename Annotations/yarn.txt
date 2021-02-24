@@ -9,5 +9,3 @@ Dicas
 **yarn remove -> remove pack
 **git config --global user.email "samuel.hgs19@outlook.com"
 **git config --global user.name "samuelfre"
-
-Uma modificação
