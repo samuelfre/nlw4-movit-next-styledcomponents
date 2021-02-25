@@ -25,16 +25,6 @@ const DivPercent = styled.div`
   background: var(--green);
 `;
 
-
-const DivContainer = styled.div`
-  height: 100vh;
-  max-width: 992px;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-`;
-
 const SpanTXT = styled.span`
    left: 50%;
    position: absolute;
@@ -45,16 +35,16 @@ const SpanTXT = styled.span`
 
 export function ExperienceBar() {
    return (
-      <DivContainer>
-         <Header>
-            <Span>0 xp</Span>
-            <Div>
-               <DivPercent />
-               <SpanTXT>300 xp</SpanTXT>
-            </Div>
-            <Span>600 xp</Span>
-         </Header>
-      </DivContainer>
+      <Header>
+         <Span>0 xp</Span>
+         <Div>
+            <DivPercent />
+            <SpanTXT>300 xp</SpanTXT>
+         </Div>
+         <Span>600 xp</Span>
+      </Header>
    )
 
 }
+
+//Dependência de cor, no global.tsx
