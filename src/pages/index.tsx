@@ -1,8 +1,8 @@
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import React from "react";
-import MainContainer from "../estructure-components/MainContainer";
-import MainSection from "../estructure-components/MainSection";
+import MainContainer from "../structure-components/MainContainer";
+import MainSection from "../structure-components/MainSection";
 import { CompletedChallenge } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 
