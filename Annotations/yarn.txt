@@ -17,3 +17,11 @@ Auto Rename Tag
 vscode-styled-components
 ES7 React/Redux/GraphQL/React-Native snippets
 
+//*====================================================
+//*****************COMO SUBSTITUIR NO STYLEDCOMPONENTS*****************
+//*====================================================
+// const MyStyledComponent = styled(DivNotActive)`
+//   &&& {
+//     background: var(--blue);
+//   }
+// `

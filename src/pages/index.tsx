@@ -7,6 +7,7 @@ import { CompletedChallenge } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 
 import Head from "next/head";
+import { ChallengeBox } from "../components/ChallengeBox";
 
 function Home() {
   return (
@@ -20,6 +21,9 @@ function Home() {
           <Profile />
           <CompletedChallenge />
           <Countdown />
+        </div>
+        <div>
+          <ChallengeBox />
         </div>
       </MainSection>
     </MainContainer>
