@@ -9,3 +9,11 @@ Dicas
 **yarn remove -> remove pack
 **git config --global user.email "samuel.hgs19@outlook.com"
 **git config --global user.name "samuelfre"
+
+Color Highlight
+Error Lens
+Bracket Pair Color
+Auto Rename Tag
+vscode-styled-components
+ES7 React/Redux/GraphQL/React-Native snippets
+

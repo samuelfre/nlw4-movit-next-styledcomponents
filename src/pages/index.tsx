@@ -1,15 +1,10 @@
-import styled from "styled-components";
+import { ExperienceBar } from "../components/experienceBar";
 
-const Heading = styled.h1`
-  font-size: 40px;
-  color: green;
-`;
 
 function Home() {
   return (
     <>
-      <Heading>Hello world!</Heading>
-      <div>Hello world!</div>
+      <ExperienceBar />
     </>
   )
 }
