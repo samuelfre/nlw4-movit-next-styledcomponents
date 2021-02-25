@@ -11,6 +11,9 @@ const IMG = styled.img`
   height: 5.5rem;
   border-radius: 58%;
 `;
+const IMGLEVEL = styled.img`
+  margin-right: 0.5rem;
+`;
 
 const DivTXT = styled.div`
   margin-left: 1.5rem;
@@ -36,7 +39,9 @@ export function Profile() {
          <IMG src="https://github.com/samuelfre.png" alt="Samuel Henrique" />
          <DivTXT>
             <Strong>Samuel Henrique</Strong>
-            <P>Level 1</P>
+            <P>
+              <IMGLEVEL src="icons/level.svg" alt="Level"/>
+              Level 1</P>
          </DivTXT>
       </Div>
    );
