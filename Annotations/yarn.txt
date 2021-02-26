@@ -15,7 +15,6 @@ Error Lens
 Bracket Pair Color
 Auto Rename Tag
 vscode-styled-components
-ES7 React/Redux/GraphQL/React-Native snippets
 
 //*====================================================
 //*****************COMO SUBSTITUIR NO STYLEDCOMPONENTS*****************
@@ -25,3 +24,4 @@ ES7 React/Redux/GraphQL/React-Native snippets
 //     background: var(--blue);
 //   }
 // `
+

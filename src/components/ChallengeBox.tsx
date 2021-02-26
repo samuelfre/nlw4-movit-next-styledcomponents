@@ -1,8 +1,5 @@
+import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-
-interface PropsType{
-  
-}
 
 const Div = styled.div`
   /* ... */
@@ -32,7 +29,7 @@ const Button = styled.button`
   :hover{
     filter: brightness(0.9);
   }
-  ${props => props.fail ? css`background: var(--red);` : css`background: var(--green);`}
+  ${(props: { fail: ReactNode; }) => props.fail ? css`background: var(--red);` : css`background: var(--green);`}
 `;
 
 
@@ -72,10 +69,7 @@ const InnerDiv = styled.div`
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-
-    
-
+    gap: 1rem;  
   }
 
 `;
