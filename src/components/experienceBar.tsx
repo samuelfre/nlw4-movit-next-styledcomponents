@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Header = styled.header`
   display: flex;
   align-items: center;
+  margin-bottom: 2.5rem;
 `;
 
 const Span = styled.span`
