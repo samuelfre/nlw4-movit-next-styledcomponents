@@ -1,4 +1,5 @@
 import { createContext, useState, ReactNode } from 'react'
+import challenges from '../../challenges.json'
 
 interface ChallengesContextData{
   level: number,
@@ -24,7 +25,8 @@ export function ChallengesProvider({ children }: ChallengeProviderProps) {
   }
 
   function startNewChallenge(){
-    console.log('New challenge');
+    const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
+    const challenge = challenges[randomChallengeIndex];
   }
 
   return (
