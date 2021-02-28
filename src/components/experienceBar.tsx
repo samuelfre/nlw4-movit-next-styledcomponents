@@ -46,7 +46,7 @@ export function ExperienceBar() {
          <Span>0 xp</Span>
          <Div>
             <DivPercent width={`${percentToNextLevel}%`} />
-            <SpanTXT left={`${percentToNextLevel}%`}>{currentExperience === 0 ? null : `${percentToNextLevel}xp`}</SpanTXT>
+            <SpanTXT left={`${percentToNextLevel}%`}>{currentExperience === 0 ? null : `${currentExperience}xp`}</SpanTXT>
          </Div>
          <Span>{experienceToNextLevel} xp</Span>
       </Header>

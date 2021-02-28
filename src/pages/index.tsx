@@ -8,6 +8,7 @@ import { Countdown } from "../components/Countdown";
 
 import Head from "next/head";
 import { ChallengeBox } from "../components/ChallengeBox";
+import { CountdownProvider } from "../contexts/CountdownContext";
 
 function Home() {
   return (
@@ -16,16 +17,18 @@ function Home() {
         <title>Início | move.it</title>
       </Head>
       <ExperienceBar />
-      <MainSection>
-        <div>
-          <Profile />
-          <CompletedChallenge />
-          <Countdown />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </MainSection>
+      <CountdownProvider>
+        <MainSection>
+          <div>
+            <Profile />
+            <CompletedChallenge />
+            <Countdown />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </MainSection>
+      </CountdownProvider>
     </MainContainer>
   )
 }

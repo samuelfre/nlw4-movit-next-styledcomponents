@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 const Div = styled.div`
   display: flex;
@@ -34,6 +35,7 @@ const P = styled.p`
 
 
 export function Profile() {
+  const { level } = useContext(ChallengesContext);
    return (
       <Div>
          <IMG src="https://github.com/samuelfre.png" alt="Samuel Henrique" />
@@ -41,7 +43,7 @@ export function Profile() {
             <Strong>Samuel Henrique</Strong>
             <P>
               <IMGLEVEL src="icons/level.svg" alt="Level"/>
-              Level 1</P>
+              Level {level}</P>
          </DivTXT>
       </Div>
    );
