@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 import styled, { css } from 'styled-components';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 const Div = styled.div`
   /* ... */
@@ -102,21 +103,23 @@ const DivNotActive = styled.div`
 
 
 export function ChallengeBox() {
-  const hasActiveChallenge = true;
+  const { activeChallenge, resetChallenge } = useContext(ChallengesContext);
+
   return (
     <Div>
-      {hasActiveChallenge ? (
+      {activeChallenge ? (
         <InnerDiv>
-          <header>Ganhe 400 xp</header>
+          <header>Ganhe {activeChallenge.amount}</header>
           <main>
-            <img src="icons/body.svg" />
+            <img src={`icons/${activeChallenge.type}.svg`} />
             <strong>Novo desafio</strong>
-            <p>Levante e faça uma caminhada de 3 minutos</p>
+            <p>{activeChallenge.description}</p>
           </main>
           <footer>
             <Button
               type="button"
               fail
+              onClick={resetChallenge}
             >Falhei</Button>
             <Button
               type="button"

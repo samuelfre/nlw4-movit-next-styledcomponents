@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 const Header = styled.header`
   display: flex;
@@ -20,14 +22,14 @@ const Div = styled.div`
 `;
 
 const DivPercent = styled.div`
-  width: 50%;
+  width: ${props => props.width};
   height: 4px;
   border-radius: 4px;
   background: var(--green);
 `;
 
 const SpanTXT = styled.span`
-   left: 50%;
+   left: ${props => props.left};
    position: absolute;
    top: 12px;
    transform: translateX(-50%);
@@ -35,14 +37,18 @@ const SpanTXT = styled.span`
 `;
 
 export function ExperienceBar() {
+   const { currentExperience, experienceToNextLevel } = useContext(ChallengesContext);
+   const percentToNextLevel = Math.round(currentExperience * 100 / experienceToNextLevel);
+
+
    return (
       <Header>
          <Span>0 xp</Span>
          <Div>
-            <DivPercent />
-            <SpanTXT>300 xp</SpanTXT>
+            <DivPercent width={`${percentToNextLevel}%`} />
+            <SpanTXT left={`${percentToNextLevel}%`}>{currentExperience === 0 ? null : `${percentToNextLevel}xp`}</SpanTXT>
          </Div>
-         <Span>600 xp</Span>
+         <Span>{experienceToNextLevel} xp</Span>
       </Header>
    )
 

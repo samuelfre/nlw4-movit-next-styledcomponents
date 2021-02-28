@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 const Div = styled.div`
   display: flex;
@@ -18,10 +20,11 @@ const SpanRigth = styled.span`
 
 
 export function CompletedChallenge() {
+  const { challengesCompleted } = useContext(ChallengesContext);
   return(
     <Div>
       <SpanLeft>Desafios completos</SpanLeft>
-      <SpanRigth>5</SpanRigth>
+      <SpanRigth>{challengesCompleted}</SpanRigth>
     </Div>
   );
 }
