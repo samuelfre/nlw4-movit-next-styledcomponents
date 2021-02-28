@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, ReactNode } from 'react';
 import styled from 'styled-components';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 
@@ -22,14 +22,14 @@ const Div = styled.div`
 `;
 
 const DivPercent = styled.div`
-  width: ${props => props.width};
+  width: ${(props: { width: ReactNode; }) => props.width};
   height: 4px;
   border-radius: 4px;
   background: var(--green);
 `;
 
 const SpanTXT = styled.span`
-   left: ${props => props.left};
+   left: ${(props: { left: ReactNode; }) => props.left};
    position: absolute;
    top: 12px;
    transform: translateX(-50%);
