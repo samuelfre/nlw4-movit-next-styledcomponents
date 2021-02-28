@@ -1,5 +1,5 @@
 -Install Typescript
-   yarn add typescript @types/react @types/node -D -> Depêndencia de desenvolvimento. 
+   yarn add typescript @types/react @types/node -D -> Depêndencia de desenvolvimento (Tipagem coloca em desenvolvimento). 
 -Install styled-components
    yarn add styled-components
 -Install and setup styled-components Babel plugin (Tem configs pra fazer https://hoangtrinhj.com/next-js-with-styled-components) e tbm no package.json um tal de resolution.
