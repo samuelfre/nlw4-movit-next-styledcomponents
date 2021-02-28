@@ -9,7 +9,7 @@ const Div = styled.div`
   max-width: 400px;
   padding: 2rem 3rem;
   border-radius: 5px;
-  box-shadow: 0 0 60px rbta(0, 0, 0, 0.05);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   text-align: center;
   position: relative;
 
