@@ -1,3 +1,4 @@
+import { useSession } from 'next-auth/client';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ChallengesContext } from '../contexts/ChallengesContext';
@@ -18,6 +19,7 @@ const IMGLEVEL = styled.img`
 
 const DivTXT = styled.div`
   margin-left: 1.5rem;
+  
 `;
 
 const Strong = styled.strong`
@@ -35,12 +37,13 @@ const P = styled.p`
 
 
 export function Profile() {
+  const [session, loading] = useSession();
   const { level } = useContext(ChallengesContext);
    return (
       <Div>
-         <IMG src="https://github.com/samuelfre.png" alt="Samuel Henrique" />
+         <IMG src={session?.user?.image ?? ''} alt={session?.user?.name ?? ''} />
          <DivTXT>
-            <Strong>Samuel Henrique</Strong>
+            <Strong>{session?.user?.name ?? ''}</Strong>
             <P>
               <IMGLEVEL src="icons/level.svg" alt="Level"/>
               Level {level}</P>
