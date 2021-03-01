@@ -9,9 +9,9 @@ import Head from "next/head";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
-import { ExperienceBar } from "../components/ExperienceBar";
 import { connectToDatabase } from '../util/mongodb'
 import { useSession, signOut, getSession } from "next-auth/client";
+import { ExperienceBar } from "../components/Experience";
 
 
 interface HomeProps {
