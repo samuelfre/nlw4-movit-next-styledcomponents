@@ -8,7 +8,7 @@ function index() {
     <>
       {!session && <>
         Not signed in <br />
-        <button onClick={() => signIn('github', { callbackUrl: `${process.env.NEXTAUTH_URL}/home` })}>Sign in</button>
+        <button onClick={() => signIn('github', { callbackUrl: 'https://nlw4-movit.vercel.app/home' })}>Sign in</button>
       </>}
       {session && <>
         <br />
