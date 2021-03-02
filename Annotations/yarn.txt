@@ -25,3 +25,6 @@ vscode-styled-components
 //   }
 // `
 
+-Um componente pode ter vários styled-component dentro dele.
+-Um componente, com excessão de estar localizado nas pages, nunca deve ter outro componente dentro dele.
+-Um styled-component pode ter outros styled-component dentro dele

@@ -15,10 +15,9 @@ import { ExperienceBar } from "../components/Experience";
 
 
 interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-  isConnected: boolean;
+  level?: number;
+  currentExperience?: number;
+  challengesCompleted?: number;
 }
 
 function Home(props: HomeProps) {
@@ -66,25 +65,36 @@ export default Home;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-  const { client } = await connectToDatabase();
-  const session = await getSession(ctx);
-
-  const isConnected = await client.isConnected();
-  if (session) {
-    return {
-      props: {
-        isConnected,
-        level: Number(level ?? 1),
-        currentExperience: Number(currentExperience ?? 0),
-        challengesCompleted: Number(challengesCompleted ?? 0),
-      },
-    }
-  } else {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/'
-      }
-    }
+  return {
+    props: {
+      level: Number(level ?? 1),
+      currentExperience: Number(currentExperience ?? 0),
+      challengesCompleted: Number(challengesCompleted ?? 0),
+    },
   }
 }
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+//   const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
+//   const { client } = await connectToDatabase();
+//   const session = await getSession(ctx);
+
+//   const isConnected = await client.isConnected();
+//   if (session) {
+//     return {
+//       props: {
+//         isConnected,
+//         level: Number(level ?? 1),
+//         currentExperience: Number(currentExperience ?? 0),
+//         challengesCompleted: Number(challengesCompleted ?? 0),
+//       },
+//     }
+//   } else {
+//     return {
+//       redirect: {
+//         permanent: false,
+//         destination: '/'
+//       }
+//     }
+//   }
+// }

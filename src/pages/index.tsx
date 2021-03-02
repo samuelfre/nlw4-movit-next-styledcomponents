@@ -1,20 +1,23 @@
-import { session, signIn, signOut, useSession } from 'next-auth/client'
+import { signIn, signOut, useSession } from 'next-auth/client'
 import React from 'react'
+import Home from './home';
 
 
 function index() {
   const [session, loading] = useSession();
   return (
     <>
-      {!session && <>
-        Not signed in <br />
-        <button onClick={() => signIn('github', { callbackUrl: 'https://nlw4-movit.vercel.app/home' })}>Sign in</button>
-      </>}
-      {session && <>
-        <br />
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>}
+      {
+        (!session && !loading) &&
+        <>
+          Not signed in <br />
+          <button onClick={() => signIn()}>Sign in</button>
+        </>
+      }
+
+      {
+        session && <Home />
+      }
     </>
   )
 }
