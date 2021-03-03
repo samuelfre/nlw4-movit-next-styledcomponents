@@ -1,18 +1,15 @@
-import { signIn, signOut, useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
 import React from 'react'
+import { Login } from '../components/Login';
 import Home from './home';
 
 
-function index() {
+function Index() {
   const [session, loading] = useSession();
   return (
     <>
       {
-        (!session && !loading) &&
-        <>
-          Not signed in <br />
-          <button onClick={() => signIn()}>Sign in</button>
-        </>
+        (!session && !loading) && <Login />
       }
 
       {
@@ -22,4 +19,4 @@ function index() {
   )
 }
 
-export default index
+export default Index
