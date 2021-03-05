@@ -12,6 +12,7 @@ import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { connectToDatabase } from '../util/mongodb'
 import { useSession, signOut, getSession } from "next-auth/client";
 import { ExperienceBar } from "../components/Experience";
+import LateralBar from "../components/LateralBar";
 
 
 interface HomeProps {
@@ -27,6 +28,10 @@ function Home(props: HomeProps) {
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}>
+      <div style={{
+        display: 'flex',
+      }}>
+      <LateralBar />
       <MainContainer>
         <Head>
           <title>Início | move.it</title>
@@ -56,6 +61,7 @@ function Home(props: HomeProps) {
           </MainSection>
         </CountdownProvider>
       </MainContainer>
+      </div>
     </ChallengesProvider>
   )
 }
