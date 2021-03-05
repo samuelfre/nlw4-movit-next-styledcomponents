@@ -6,6 +6,10 @@ const MainSection = styled.section`
    grid-template-columns: 1fr 1fr;
    gap: 6.25rem;
    align-content: center;
+   @media(max-width: 414px){
+   grid-template-columns: 1fr;
+  }
+   
 `;
 
 export default MainSection;
