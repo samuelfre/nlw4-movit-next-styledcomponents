@@ -13,6 +13,7 @@ import { connectToDatabase } from '../util/mongodb'
 import { useSession, signOut, getSession } from "next-auth/client";
 import { ExperienceBar } from "../components/Experience";
 import LateralBar from "../components/LateralBar";
+import { LateralProvider } from "../contexts/LateralBarContext";
 
 
 interface HomeProps {
@@ -31,36 +32,38 @@ function Home(props: HomeProps) {
       <div style={{
         display: 'flex',
       }}>
-      <LateralBar />
-      <MainContainer>
-        <Head>
-          <title>Início | move.it</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-          <MainSection>
-            <div>
-              <Profile />
-              <>
-                {
-                  session &&
-                  <>
-                    <br />
+        <LateralProvider>
+          <LateralBar />
+        </LateralProvider>
+        <MainContainer>
+          <Head>
+            <title>Início | move.it</title>
+          </Head>
+          <ExperienceBar />
+          <CountdownProvider>
+            <MainSection>
+              <div>
+                <Profile />
+                <>
+                  {
+                    session &&
+                    <>
+                      <br />
                     Signed in as {session.user.email}
-                    <br />
-                    <button onClick={() => signOut()}>Sign out</button>
-                  </>
-                }
-              </>
-              <CompletedChallenge />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </MainSection>
-        </CountdownProvider>
-      </MainContainer>
+                      <br />
+                      <button onClick={() => signOut()}>Sign out</button>
+                    </>
+                  }
+                </>
+                <CompletedChallenge />
+                <Countdown />
+              </div>
+              <div>
+                <ChallengeBox />
+              </div>
+            </MainSection>
+          </CountdownProvider>
+        </MainContainer>
       </div>
     </ChallengesProvider>
   )

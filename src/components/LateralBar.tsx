@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { LateralBarContext, LateralProvider } from '../contexts/LateralBarContext';
 
 const Div = styled.div`
   /* ... */
@@ -44,14 +46,14 @@ const Div = styled.div`
   .hover{
     position: absolute;
     left: 0;
-    background: ${props => props.isSelected ? `var(--blue)` : 'transparent'};
+    background: ${(props: IisSelected) => props.isSelected ? `var(--blue)` : 'transparent'};
     width: 0.25rem;
     height: 3.5rem;
   }  
   .hover1{
     position: absolute;
     left: 0;
-    background: ${props => !props.isSelected ? `var(--blue)` : 'transparent'};
+    background: ${(props: IisSelected) => !props.isSelected ? `var(--blue)` : 'transparent'};
     width: 0.25rem;
     height: 3.5rem;
   }  
@@ -69,11 +71,15 @@ const Div = styled.div`
 
 `;
 
+interface IisSelected {
+  isSelected: boolean;
+}
 
 export default function LateralBar() {
-  const [isSelected, setisSelected] = useState(true);
+  const { isSelected, setisSelectedd } = useContext(LateralBarContext);
   return (
-    <Div isSelected = {isSelected}>
+    <Div isSelected={isSelected}>
+
       <div className="div">
         <button className="button2" >
           <img
@@ -83,25 +89,29 @@ export default function LateralBar() {
       </div>
 
       <div className="div1">
-        <button className="button" onClick={() => setisSelected(true)}>
-          <div className='hover' />
-          <div>
-            <img className='home' src={isSelected ? 'home-blue.svg' : 'home.svg'} />
-          </div>
-        </button>
 
-
-        <div style={{ marginTop: '1.75rem' }}>
-          <button className="button"  onClick={() => setisSelected(false)}>
-            <div className='hover1' />
+        <Link href="/">
+          <button className="button" onClick={() => setisSelectedd()}> {/*home*/}
+            <div className='hover' />
             <div>
-              <img className='ranking' src={!isSelected ? 'ranking-blue.svg' : 'ranking.svg'} />
+              <img className='home' src={isSelected ? 'home-blue.svg' : 'home.svg'} />
             </div>
           </button>
+        </Link>
 
+        <div style={{ marginTop: '1.75rem' }}>
+          <Link href="/ranking" >
+            <button className="button" onClick={() => setisSelectedd()}> {/*ranking*/}
+              <div className='hover1' />
+              <div>
+                <img className='ranking' src={!isSelected ? 'ranking-blue.svg' : 'ranking.svg'} />
+              </div>
+            </button>
+          </Link>
         </div>
-      </div>
 
+      </div>
     </Div>
+
   )
 }
