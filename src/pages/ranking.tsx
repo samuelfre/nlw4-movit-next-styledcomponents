@@ -7,9 +7,7 @@ export default function Ranking() {
     <div style={{
       display: 'flex',
     }}>
-      <LateralProvider>
-        <LateralBar />
-      </LateralProvider>
+      <LateralBar />
 
     </div>
   )

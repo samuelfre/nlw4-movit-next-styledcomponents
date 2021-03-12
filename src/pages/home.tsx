@@ -9,11 +9,9 @@ import Head from "next/head";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
-import { connectToDatabase } from '../util/mongodb'
-import { useSession, signOut, getSession } from "next-auth/client";
+import { useSession, signOut} from "next-auth/client";
 import { ExperienceBar } from "../components/Experience";
 import LateralBar from "../components/LateralBar";
-import { LateralProvider } from "../contexts/LateralBarContext";
 
 
 interface HomeProps {
@@ -32,9 +30,7 @@ function Home(props: HomeProps) {
       <div style={{
         display: 'flex',
       }}>
-        <LateralProvider>
-          <LateralBar />
-        </LateralProvider>
+        <LateralBar />
         <MainContainer>
           <Head>
             <title>Início | move.it</title>

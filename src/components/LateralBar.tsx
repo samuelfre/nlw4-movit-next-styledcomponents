@@ -58,8 +58,9 @@ const Div = styled.div`
     height: 3.5rem;
   }  
   
-  .button:hover > .hover { 
-    
+  .button:hover > .hover {     
+      background: var(--blue); }
+  .button:hover > .hover1 {     
       background: var(--blue); }
 
   .div1{
