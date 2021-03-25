@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { LateralBarContext, LateralProvider } from '../contexts/LateralBarContext';
+import { LateralBarContext } from '../contexts/LateralBarContext';
 
 const Div = styled.div`
   /* ... */
